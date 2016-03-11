@@ -11,12 +11,12 @@ router.get('/', function(req, res, next) {
     host     : 'redemodb.cgp09gsdippi.eu-central-1.rds.amazonaws.com',
     user     : 'siemens',
     password : '957585',
-    database : 'events'
+    database : 'redemodb'
   });
 
   connection.connect();
 
-  connection.query('SELECT * from comments', function(err, rows, fields) {
+  connection.query('SELECT * from events', function(err, rows, fields) {
     if (!err){
       console.log('The solution is: ', rows);
       console.log('The fields are: ', fields);
